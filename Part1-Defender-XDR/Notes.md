@@ -15,17 +15,18 @@ The following are the Microsoft Defender XDR components:
 
 Link: https://security.microsoft.com
 
-## Mitigate threats to the Microsoft 365 environment by using Microsoft 365 Defender
-Investigate, respond, and remediate threats to Microsoft Teams, SharePoint Online, and OneDrive
+## Mitigate threats to the Microsoft 365 environment by using Microsoft Defender XDR
+**Investigate, respond, and remediate threats to Microsoft Teams, SharePoint Online, and OneDrive**
+
+![Quarantine](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/main/Part1-Defender-XDR/Quarantine.png?raw=true)
 - Review - quarantine messages
 - Files
 - Activity Log -
 - Advanced Hunting - 
 
-Investigate, respond, and remediate threats to email by using Microsoft Defender for Office 365
+**Investigate, respond, and remediate threats to email by using Microsoft Defender for Office 365**
 
 ![Threat Explorer](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/ef6ff4e35ce94d2629a03688ee43470f26a4bc47/Part1-Defender-XDR/Threat_Explorer.png?raw=true)
-
 - Threat Explorer: Search for emails using various filters, including sender, recipient, URLs and attachments.
   - Can view malware, phishing, campaigns, and URL clicks.
   - Can take actions like soft/hard deleting emails, moving emails to junk/deleted folders, and triggering investigations. 
