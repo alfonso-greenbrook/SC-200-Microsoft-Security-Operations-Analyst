@@ -64,35 +64,82 @@ Link: https://compliance.microsoft.com
 
 ![Activity Explorer](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/81a8f500b829aa4993289cf39bb421f1c46f7c26/Part1-Defender-XDR/Insider%20Risk%20Policies.png?raw=true)
 - Policies: templates are available for data theft, data leaks, security policy violations, health record misuse, and risky browser usage. The templates specify the conditions and indicators that define the activities that generate alerts.  
-- eDiscovery:
-- Audit:
+- eDiscovery: a tool to search and export content in Microsoft 365 and Office 365. Premium provides an end-to-end workflow to preserve, collect, analyze, review, and export content for investigation; the ability to create cases per investigation (preserve data > collect and pre-process data > review and process data > export data)
+- Audit: find activity related to emails, groups, documents, permissions, and directory services.
 
 **Discover and manage apps by using Microsoft Defender for Cloud Apps**
 
 ![Cloud Discovery](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/2ae9c80299617c0f9d693d942ef776e36f45ab09/Part1-Defender-XDR/Cloud%20Discovery.png?raw=true)
-- Cloud Discovery:
-- Cloud App Catalog:
+- Cloud Discovery: analyses traffic logs against the Microsoft Defender for Cloud Apps catalogue of cloud apps. The dashboard provides ongoing visibility into cloud use, Shadow IT, and the risk Shadow IT poses to an organization.
+- Cloud App Catalog: full list of over 31,000 discoverable cloud apps; apps can be tagged as sanctioned, unsanctioned or monitored. The risk score and be customised or overridden.
 
 **Identify, investigate, and remediate security risks by using Defender for Cloud Apps**
 
 ![Policy Management](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/2ae9c80299617c0f9d693d942ef776e36f45ab09/Part1-Defender-XDR/Policy%20Management.png?raw=true)
-- Policy Management:
-- Policy Templates:
+- Policy Management: detects risky behaviour, violations, or suspicious data points and activities in a cloud environment. The following types of policies can be created: Activity Policy, Anomaly detection policy, OAuth app policy, Malware detection policy, File policy, Access policy, Session policy, App discovery policy, and Cloud Discovery anomaly detection policy.
+- Policy Templates: existing templates can be used to simplify policy creation; the templates can be filtered based on the following categories: Threat detection, privileged accounts, compliance, DLP, Cloud Discovery, Sharing control, Access control, and Configuration control.
+- Files: actions such as moving a file to trash/quarantine, remove collaborator, make private
 
 ## Mitigate endpoint threats by using Microsoft Defender for Endpoint
 **Manage data retention, alert notification, and advanced features**
 
-Recommend attack surface reduction (ASR) for devices
+![Advanced Features](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/3614e7fe4252e8c92c783f554a6d7a69d772233c/Part1-Defender-XDR/Advanced_Features.png?raw=true)
+- Data Retention: retained for up to 180 days; Advanced Hunting data is available for 30 days.
+- Alert Notification: Settings > Endpoint > General > Email Notifications _or_ Settings > Microsoft Defender XDR > General > Email Notifications
+- Advanced Features: Settings > Endpoint > General > Advanced Features
 
-Respond to incidents and alerts
+**Recommend attack surface reduction (ASR) for devices**
 
-Configure and manage device groups
+![ASR Rules](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/3614e7fe4252e8c92c783f554a6d7a69d772233c/Part1-Defender-XDR/Attack_Surface_Reduction.png?raw=true)
+- ASR configuration: Reports > Endpoints > Attack surface reduction rules
+  - Detections: shows audited and blocked ASR events on devices
+  - Configurations: list of all devices; shows overall configuration (block/audit/warn/off/not applicable/unknown)
+  - Exclusions: select detected files to exclude; display how the exclusion would impact detections.
 
-Identify devices at risk by using the Microsoft Defender Vulnerability Management
+**Respond to incidents and alerts**
 
-Manage endpoint threat indicators
+![Alert & Device Actions](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/3614e7fe4252e8c92c783f554a6d7a69d772233c/Part1-Defender-XDR/Alert_Device_Actions.png?raw=true)
+- Device Actions: Run Anti-virus Scan, Collect Investigation Package, Restrict App Execution, Initiate Automated Investigation, Isolate Device
+- File Actions: Add Indicator, Manage in tenant block list, download file, Go hunt, Deep analysis
 
-Identify unmanaged devices by using device discovery
+**Configure and manage device groups**
+
+![Device Groups](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/3614e7fe4252e8c92c783f554a6d7a69d772233c/Part1-Defender-XDR/Device_Groups.png?raw=true)
+- Default: Ungrouped devices (default)
+- Custom: Specify group name, remediation level (full/semi/non), matching rule (name/domain/tag/os), preview devices, and user access (Entra ID user groups to access device group).
+
+**Identify devices at risk by using the Microsoft Defender Vulnerability Management**
+
+![Vulnerability Recommendations](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/9c9122caa9e53d6ce06b16323cb1e3cbd70bf8d7/Part1-Defender-XDR/Vulnerability_Recommendations.png?raw=true)
+- Dashboard: view exposure score and Microsoft Secure Score for Devices, along with top security recommendations, software vulnerability, remediation activities, and exposed devices
+- Recommendations: list of security recommendations, including a count of weaknesses, breach/threat insights, exposed devices, remediation type and impact.
+- Remediation: list of activities, exceptions and blocked applications.
+- Inventories: list of software, browser extensions, certificates, hardware and firmware
+- Weaknesses: list of vulnerabilities in the organisation, including severity, CVSS, affected software, age, breach/threat insights and count of exposed devices
+- Event timeline: list of vulnerability-related events
+- Baseline assessment: a customized profile to assess and monitor endpoints in an organization against industry security benchmarks. A security baseline profile is essentially a template that consists of multiple device configuration settings and a base benchmark to compare against.
+
+**Manage endpoint threat indicators**
+
+![Threat Indicators](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/9c9122caa9e53d6ce06b16323cb1e3cbd70bf8d7/Part1-Defender-XDR/Indicators.png?raw=true)
+- File hashes: Settings > Endpoints > Rules > Indicators > File Hashes
+- IP Addresses: Settings > Endpoints > Rules > Indicators > IP Addresses
+- URLs/Domains: Settings > Endpoints > Rules > Indicators > URLs/Domains
+- Certificates: Settings > Endpoints > Rules > Indicators > Certificates
+- The following actions are available for IOCs:
+  - _Allow_: the IoC is allowed to run on your devices.
+  - _Audit_: an alert is triggered when the IoC runs.
+  - _Warn_: the IoC prompts a warning that the user can bypass
+  - _Block execution_: the IoC won't be allowed to run.
+  - _Block and remediate_: the IoC won't be allowed to run and a remediation action will be applied to the IoC.
+
+**Identify unmanaged devices by using device discovery**
+
+![Device Discovery](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/9c9122caa9e53d6ce06b16323cb1e3cbd70bf8d7/Part1-Defender-XDR/Device_Discovery.png?raw=true)
+- Device Inventory: filter by 'managed by: unknown'.
+- Discovery setup: Settings > Device Discovery > Discovery setup
+  - Basic: endpoints passively collect events in the network and extract device information from them.
+  - Standard (recommended): endpoints actively find devices in your network to enrich collected data and discover more devices; leverages common discovery protocols that use multicast queries in the network to find even more devices
 
 ## Mitigate identity threats
 Mitigate security risks related to events for Microsoft Entra ID
@@ -101,7 +148,7 @@ Mitigate security risks related to Microsoft Entra Identity Protection events
 
 Mitigate security risks related to Active Directory Domain Services (AD DS) by using Microsoft Defender for Identity
 
-## Manage extended detection and response (XDR) in Microsoft 365 Defender
+## Manage extended detection and response (XDR) in Microsoft Defender XDR
 Manage incidents and automated investigations in the Microsoft 365 Defender portal
 
 Manage actions and submissions in the Microsoft 365 Defender portal
@@ -110,14 +157,16 @@ Identify threats by using Kusto Query Language (KQL)
 
 Identify and remediate security risks by using Microsoft Secure Score
 
-Analyze threat analytics in the Microsoft 365 Defender portal
+Analyze threat analytics in the Microsoft Defender XDR portal
 
 Configure and manage custom detections and alerts
 
 ## Investigate threats by using audit features in Microsoft 365 Defender and Microsoft Purview
+
 Perform threat hunting by using unified audit log
 
 Perform threat hunting by using Content Search
 
 Use the guided hunting mode in Microsoft 365 Defender
-Use theadvanced hunting mode in Microsoft 365 Defender
+
+Use the advanced hunting mode in Microsoft 365 Defender
