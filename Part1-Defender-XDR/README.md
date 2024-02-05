@@ -139,27 +139,81 @@ Link: https://compliance.microsoft.com
 - Device Inventory: filter by 'managed by: unknown'.
 - Discovery setup: Settings > Device Discovery > Discovery setup
   - Basic: endpoints passively collect events in the network and extract device information from them.
-  - Standard (recommended): endpoints actively find devices in your network to enrich collected data and discover more devices; leverages common discovery protocols that use multicast queries in the network to find even more devices
+  - Standard (recommended): endpoints actively find devices in your network to enrich collected data and discover more devices; leverage common discovery protocols that use multicast queries in the network to find even more devices
 
 ## Mitigate identity threats
-Mitigate security risks related to events for Microsoft Entra ID
 
-Mitigate security risks related to Microsoft Entra Identity Protection events
+**Mitigate security risks related to events for Microsoft Entra ID**
 
-Mitigate security risks related to Active Directory Domain Services (AD DS) by using Microsoft Defender for Identity
+![Entra ID](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/65e89986e1bb0e2f3b39f19822b1d23d1804b282/Part1-Defender-XDR/Risky_Sign_ins.png?raw=true)
+- Conditional access: Zero Trust policy engine that takes signals _(User or Group Membership, IP Location Information, Device Attributes, Application-Specific Policies, Risk Detection)_ from various sources into account when making policy decisions such as blocking or granting access.
+- Reports: Risky users, risky workload identifies, risky signing, risk detections.
+- Manage: Identity Secure Score, Named Locations, Authentication Methods, Multifactor authentication, certificate authorities
+
+**Mitigate security risks related to Microsoft Entra Identity Protection events**
+
+![Entra ID Protection](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/65e89986e1bb0e2f3b39f19822b1d23d1804b282/Part1-Defender-XDR/User_Details.png?raw=true)
+- Workflow: Self-remediation (administrator first configures the risk policies that then monitor for identity risks; when a risk is detected, the policies enforce measures to remediate it) vs Administrator remediation (admin views the detailed report and take appropriate action to remediate the risks)
+- Risks: User risk (actions that users take after signing in) vs Sign-in risk (suspicious activity and actions by users when they sign in)
+- Actions: Within Defender XDR there is the option to confirm the user as compromised, suspend the user in Entra ID, require the user to sign in again.
+- Remediate risks: Self-remediation, Reset passwords manually, Dismiss user risk detections, Close individual detections.
+
+**Mitigate security risks related to Active Directory Domain Services (AD DS) by using Microsoft Defender for Identity**
+
+![Identity Dashboard](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/65e89986e1bb0e2f3b39f19822b1d23d1804b282/Part1-Defender-XDR/Identities_Dashboard.png?raw=true)
+- Monitoring: Monitor users, entity behaviour, and activities using learning-based analytics. Creating a behavioural baseline for each user using information such as permissions and group membership; then identifying anomalies.
+- Protection: Protect user identities and credentials stored in Active Directory, and reduce the attack surface. Provides insights on identity configurations and suggested security best practices to reduce the attack surface.
+- Identification: Identify suspicious activities and advanced attacks using detections across the kill chain from _reconnaissance_ through to compromised credentials to _lateral movements_ and domain dominance.
+
 
 ## Manage extended detection and response (XDR) in Microsoft Defender XDR
-Manage incidents and automated investigations in the Microsoft 365 Defender portal
 
-Manage actions and submissions in the Microsoft 365 Defender portal
+**Manage incidents and automated investigations in the Microsoft 365 Defender portal**
 
-Identify threats by using Kusto Query Language (KQL)
+![Incidents](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/65e89986e1bb0e2f3b39f19822b1d23d1804b282/Part1-Defender-XDR/Manage_Incident.png?raw=true)
+- Incidents: Ability to change the name, severity (Informational, Low, Medium, High), incident tags, assigned to, status (Active, In Progress, Resolved), and to add comments.
+- Automated Investigations: Ability to approve pending actions. The investigation page shows the investigation graph, alerts, devices, evidence, entities (files, processes, services, drivers, IP addresses, persistence methods), log
 
-Identify and remediate security risks by using Microsoft Secure Score
+**Manage actions and submissions in the Microsoft Defender XDR portal**
 
-Analyze threat analytics in the Microsoft Defender XDR portal
+![Action Centre](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/65e89986e1bb0e2f3b39f19822b1d23d1804b282/Part1-Defender-XDR/Action_Center.png?raw=true)
+- Action Centre: View pending and historic actions
+- Submissions: Analysts can submit emails, Teams messages, email attachments, URLs, files, and user-reported content - content can be submitted with as the following (false positive/false negative):
+  - Clean
+  - Phishing
+  - Malware
+  - Spam
 
-Configure and manage custom detections and alerts
+**Identify threats by using Kusto Query Language (KQL)**
+
+![Advanced Hunting](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/65e89986e1bb0e2f3b39f19822b1d23d1804b282/Part1-Defender-XDR/Advanced_Hunting.png?raw=true)
+- Advanced Hunting: The following tables are available within Defender XDR:
+ -  Alerts & behaviours: AlertEvidence, AlertInfo, BehaviourEntities, BehaviourInfo
+ -  Apps & Identities: AADSignInEventsBeta, AADSpnSignInEvents, CloudAppEvents, IdentityDirectoryEvents, IdentitiyInfo, IdentityLogonEvents, IdentityQueryEvents
+ -  Email & collaboration: EmailAttachmentInfo, EmailEvents, EmailPostDeliveryEvents, EmailUrlInfo, UrlClickEvents
+ -  Devices: DeviceEvents, DeviceFileCertificateInfo, DeviceFileEvents, DeviceImageLoadEvents, DeviceInfo, DeviceLogonEvents, DeviceNetworkEvents, DeviceNetworkInfo, DeviceProcessEvents, DeviceRegistryEvents
+ -  Defender Vulnerability Management: DeviceTvmHardwareFirmware, DeviceTvmInfoGathering, DeviceTvmInfoGatheringKB, DeviceTvmSecureConfigurationAssessment, DeviceTvmSecureConfigurationAssessmentKB, DeviceTvmSoftwareEvidenceBeta, DeviceTvmSoftwareInventory, DeviceTvmSoftwareVulnerabilities, DeviceTvmSoftwareVulnerabilitiesKB
+
+**Identify and remediate security risks by using Microsoft Secure Score**
+
+![SecureScore](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/65e89986e1bb0e2f3b39f19822b1d23d1804b282/Part1-Defender-XDR/Secure_Score.png?raw=true)
+- Secure Score is a representation of an organisation's security posture, and the opportunities to improve it; the recommended actions are actions that can be taken to improve the score.
+  - The score can be broken down into these categories: identity, data, device, apps
+
+
+**Analyze threat analytics in the Microsoft Defender XDR portal**
+
+![Threat Analytics](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/65e89986e1bb0e2f3b39f19822b1d23d1804b282/Part1-Defender-XDR/Threat_Analytics.png?raw=true)
+- Threat Analytics: The dashboard provides insights into the most relevant threat reports for your organization, including the latest threats, high-impact threats, and those with the highest exposure1.
+- Intel Profiles: categories of threat actors based on their location, specific target industries, and modus operandi. Each profile includes known indicators of compromise (IoCs) related to their infrastructure and the tactics, techniques, and procedures (TTPs) they employ.
+- Intel Explorer: explore threat intelligence data, conduct searches, and dive into investigations.
+- Intel Projects: save indicators to Projects during searches or within the “Intel Projects” tab to organize and monitor adversary infrastructure.
+
+**Configure and manage custom detections and alerts**
+
+![Custom Detection Rule](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/65e89986e1bb0e2f3b39f19822b1d23d1804b282/Part1-Defender-XDR/Custom_Detection.png?raw=true)
+- Advanced Hunting: KQL queries can be saved as Custom Detection Rules. The name, frequency, alert title, severity and description can be customised. Impacted assets can be mapped (users, mailboxes, devices), actions setup (isolate device, quarantine file etc) and scope (e.g. device group)
+- Alert Suppression: Settings > Microsoft Defender XDR > Rules > Alert tuning
 
 ## Investigate threats by using audit features in Microsoft 365 Defender and Microsoft Purview
 
