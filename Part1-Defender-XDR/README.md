@@ -1,5 +1,5 @@
 > [!NOTE]
-> This is currently under development
+> Based on skills measured prior to March 4, 2024
 # Mitigate threats by using Defender XDR (25–30%)
 Microsoft Defender XDR (formerly Microsoft 365 Defender) is a security operations platform that unifies security with XDR and SIEM across the cyberattack chain. It provides incident-level visibility, automatic disruption, rapid response, and multitenant management for endpoints, identities, cloud apps, email, and more. Microsoft Defender XDR is a cross-product solution that detects, prevents, investigates, and responds to sophisticated attacks across endpoints, identities, email, and applications.
 
