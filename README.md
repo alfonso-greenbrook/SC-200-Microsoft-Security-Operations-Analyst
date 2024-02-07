@@ -1,5 +1,5 @@
 > [!NOTE]
-> Notes correct as of January 2024
+> Based on skills measured prior to March 4, 2024
 
 # SC-200: Microsoft Security Operations Analyst
 The SC-200: Microsoft Security Operations Analyst exam is a certification exam offered on Microsoft Learn. This exam measures your ability to accomplish the following technical tasks: mitigate threats by using Microsoft Defender XDR; mitigate threats by using Defender for Cloud; and mitigate threats by using Microsoft Sentinel. 
