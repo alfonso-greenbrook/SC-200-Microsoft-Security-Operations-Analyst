@@ -178,7 +178,7 @@ Link: https://compliance.microsoft.com
 
 ![Action Centre](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/65e89986e1bb0e2f3b39f19822b1d23d1804b282/Part1-Defender-XDR/Action_Center.png?raw=true)
 - Action Centre: View pending and historic actions
-- Submissions: Analysts can submit emails, Teams messages, email attachments, URLs, files, and user-reported content - content can be submitted with as the following (false positive/false negative):
+- Submissions: Analysts can submit emails, Teams messages, email attachments, URLs, files, and user-reported content - content can be submitted as the following (false positive/false negative):
   - Clean
   - Phishing
   - Malware
@@ -215,12 +215,47 @@ Link: https://compliance.microsoft.com
 - Advanced Hunting: KQL queries can be saved as Custom Detection Rules. The name, frequency, alert title, severity and description can be customised. Impacted assets can be mapped (users, mailboxes, devices), actions setup (isolate device, quarantine file etc) and scope (e.g. device group)
 - Alert Suppression: Settings > Microsoft Defender XDR > Rules > Alert tuning
 
-## Investigate threats by using audit features in Microsoft 365 Defender and Microsoft Purview
+## Investigate threats by using audit features in Microsoft Defender XDR and Microsoft Purview
 
-Perform threat hunting by using unified audit log
+**Perform threat hunting by using unified audit log**
 
-Perform threat hunting by using Content Search
+![Unified Audit Log](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/50b893f33fcda7968f2b6d783fddaba9531bf16f/Part1-Defender-XDR/Unified_Audit_Log.png?raw=true)
+- Microsoft Purview provides two auditing solutions: Audit (Standard) and Audit (Premium).
+  - User and admin activities performed in _Microsoft 365 services and solutions_ are captured, recorded, and retained in the Unified Audit Log (UAL)
+  - Audit (Standard):
+    - Enabled by default in organizations with the appropriate subscription.
+    - The _Search-UnifiedAuditLog_ cmdlet can be used in Exchange Online PowerShell to search for audit events or to use in a script
+    - Export audit records to a CSV file.
+    - Access to audit logs via Office 365 Management Activity API
+    - 180-day audit log retention
+  - Audit (Premium):
+    - Create customized _audit log retention policies_ to retain audit records for up to one year (and up to 10 years for users with required add-on license)
+    - Longer retention of audit records: Exchange, SharePoint, and Microsoft Entra audit records are retained for one year by default.
+    - High-value, crucial Audit (Premium) events such as when mail items were accessed, when mail items were replied to and forwarded, and when and what a user searched for in Exchange Online and SharePoint Online.
+    - Higher bandwidth to the Office 365 Management Activity API
+   - Ability to search based on date and time range, keywords, users, operation types etc 
 
-Use the guided hunting mode in Microsoft 365 Defender
+**Perform threat hunting by using Content Search**
 
-Use the advanced hunting mode in Microsoft 365 Defender
+![Content Search](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/50b893f33fcda7968f2b6d783fddaba9531bf16f/Part1-Defender-XDR/Content_Search.png?raw=true)
+- Content search is used to search for content across Microsoft 365 data sources. Results can then be exported. Keyword queries and search conditions can be set up to search across Exchange mailboxes, SharePoint sites and exchange public folders.
+- Content builder or KQL editor to define search conditions.
+- After a search is run, analysts can preview a sample of the results returned by the search to determine if the search needs to be refined.
+- Multiple options to export search results:
+  - One PST file for each mailbox.
+  - One PST file containing all messages.
+  - One PST file containing all messages in a single folder.
+  - Individual messages.
+- Report can also be exported. 
+
+**Use the guided hunting mode in Microsoft Defender XDR**
+
+![Guided Hunting](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/50b893f33fcda7968f2b6d783fddaba9531bf16f/Part1-Defender-XDR/Guided_Hunting.png?raw=true)
+- Designed for analysts who may not be familiar with the Kusto Query Language (KQL) or the underlying data schema.
+- In guided mode, you can construct queries using an easy-to-use, visual interface. It offers dropdown menus with available filters and conditions.
+
+**Use the advanced hunting mode in Microsoft Defender XDR**
+
+![Advanced Hunting](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/50b893f33fcda7968f2b6d783fddaba9531bf16f/Part1-Defender-XDR/Advanced_Hunting.png?raw=true)
+- Designed for experienced analysts who are comfortable with KQL.
+- In advanced mode, you create queries from scratch in KQL using the various Defender XDR tables
