@@ -80,6 +80,10 @@ Link: https://portal.azure.com/#view/Microsoft_Azure_Security/SecurityMenuBlade/
 
 **Assess and recommend cloud workload protection**
 
+![Security Posture](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/3194838f67937d0875aa24bad31c1dcb7c4adc20/Part2-Defender-for-Cloud/Security_Posture.png?raw=true)
+
+- The security posture page gives an overview of Secure Score, recommendations, attack paths and unhealthy resources. 
+
 **Enable plans for Microsoft Defender for Cloud**
 
 ![DefenderPlans](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/2703f380280cda5d08055b6b425386b9b58b8e67/Part2-Defender-for-Cloud/Defender_Plans.png?raw=true)
