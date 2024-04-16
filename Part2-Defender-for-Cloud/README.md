@@ -88,21 +88,74 @@ Link: https://portal.azure.com/#view/Microsoft_Azure_Security/SecurityMenuBlade/
 
 ![DefenderPlans](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/2703f380280cda5d08055b6b425386b9b58b8e67/Part2-Defender-for-Cloud/Defender_Plans.png?raw=true)
 
+- Environment settings > subscription or workspace > select all or some plans > save
+
 **Configure automated onboarding of Azure resources**
+
+![PolicyDefinition](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/main/Part2-Defender-for-Cloud/Policy_Definitions.png?raw=true)
+
+- Environment settings > Subscription > Auto-provisioning > Enable all extensions.
+- Azure Policy > 'Enable Microsoft Defender for Cloud on your subscription' definition > Management Level > Create a remediation
 
 **Connect compute resources by using Azure Arc**
 
+![AzureArc](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/main/Part2-Defender-for-Cloud/Azure_Arc.png?raw=true)
+
+- Azure Arc-enabled servers enables you to connect Azure to your Windows and Linux machines hosted outside of Azure on your corporate network. When a server is connected to Azure, it becomes an Arc-enabled server and is treated as a resource in Azure.
+- Azure Arc > Add a single server tile > Generate script > Install the Agent on target machine > verify connection
+
 **Connect multi-cloud resources by using Environment settings**
 
+![MultiCloudEnvironmentSettings](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/main/Part2-Defender-for-Cloud/Multi-cloud_Environment_Settings.png?raw=true)
+
+- Environment Settings > Add environment > Amazon Web Services/Google Cloud Platform/Github/Azure DevOps/GitLab
+
 ## Respond to alerts and incidents in Microsoft Defender for Cloud
-Set up email notifications
 
-Create and manage alert suppression rules
+**Set up email notifications**
 
-Design and configure workflow automation in Microsoft Defender for Cloud
+![EmailNotifications](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/main/Part2-Defender-for-Cloud/Email_Notifications.png?raw=true)
 
-Remediate alerts and incidents by using Microsoft Defender for Cloud recommendations
+- Environment Settings > Subscription > Email Notifications
+  - Recipients can be all users with the following roles:
+    - Owner
+    - AccountAdmin
+    - ServiceAdmin
+    - Contributor
+  - Additional email addresses can be added (separated by commas)
+  - Can select which severity alert generates emails (High, Medium, Low)
+    - To avoid alert fatigue, MDC limits the volume of outgoing emails:
+      - approximately four emails per day for high-severity alerts
+      - approximately two emails per day for medium-severity alerts
+      - approximately one email per day for low-severity alerts
 
-Manage security alerts and incidents
+**Create and manage alert suppression rules**
 
-Analyze Microsoft Defender for Cloud threat intelligence reports
+![SuppressionRules](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/main/Part2-Defender-for-Cloud/Alert_Suppression.png?raw=true)
+
+- Security alerts page > take action > Create suppression rule > Rule Conditions (Subscription, alerts, entities), Rule Details (Name, State, Reason, Comment), Rule Expiration > Apply
+
+**Design and configure workflow automation in Microsoft Defender for Cloud**
+
+![WorkflowAutomation](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/main/Part2-Defender-for-Cloud/Workflow_Automation_GitHub.png?raw=true)
+
+- Trigger Logic Apps from Alerts or on alert creation
+- Workflow Automation GitHub Link: https://github.com/Azure/Microsoft-Defender-for-Cloud/tree/main/Workflow%20automation
+
+**Remediate alerts and incidents by using Microsoft Defender for Cloud recommendations**
+
+![Remediation](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/main/Part2-Defender-for-Cloud/Remediation.png?raw=true)
+
+- Recommendations > Title > Findings > Remediation
+- Recommendations > Title > Fix
+
+**Manage security alerts and incidents**
+
+![ManageAlerts](https://github.com/alfonso-greenbrook/SC-200-Microsoft-Security-Operations-Analyst/blob/main/Part2-Defender-for-Cloud/Manage_Alerts.png?raw=true)
+
+- Alert Statuses (Active, In Progress, Dismissed, Resolved)
+- Inspect resource content, Mitigate the threat, Prevent future attacks, Trigger automated response, Suppress similar alerts, 
+
+**Analyze Microsoft Defender for Cloud threat intelligence reports**
+
+Security alerts page > alert details page > Threat Report (e.g., Report: Shadow Copy Delete) Link > .pdf
